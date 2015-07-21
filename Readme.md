@@ -29,6 +29,10 @@ You can customize this file based on your needs.
 
 Clone the required Envirnoment repository inside C:\Projects folder as envirnoment folder.
 
+### Docker Envirnoment Setup
+
+Based on your development envirnoment copy *scripts/setupDockers.sh.lamp* to *scripts/setupDockers.sh* file.
+Based on your development envirnoment copy *scripts/startDockers.sh.lamp* to *scripts/startDockers.sh* file.
 
 ## Running Vagrant
 

@@ -18,10 +18,6 @@ echo ">>>> Generating the locales"
 locale-gen en_US.UTF-8 &> /dev/null || exit 1
 export LANG=en_US.UTF-8
 
-echo ">>>> Upgrading the system"
-apt-get -qq update &> /dev/null || exit 1
-apt-get -qq -y --force-yes upgrade &> /dev/null || exit 1
-
 echo ">>>> Installing Docker"
 curl -sSL https://get.docker.io/ | sh &> /dev/null || exit 1
 

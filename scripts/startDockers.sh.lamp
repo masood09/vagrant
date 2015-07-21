@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo ">>>> Starting docker container : MailCatcher"
+docker restart mailcatcher &> /dev/null || exit 1
+
+echo ">>>> Starting docker container : Redis"
+docker restart redis &> /dev/null || exit 1
+
+echo ">>>> Starting docker container : Database (Percona)"
+docker restart database &> /dev/null || exit 1
+
+echo ">>>> Starting docker container : Webserver (Nginx + PHP-FPM)"
+docker restart webserver &> /dev/null || exit 1

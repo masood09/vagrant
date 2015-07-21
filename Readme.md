@@ -6,9 +6,9 @@
 
 The following softwares are required. Please install the below listed sofwares and restart your system.
 
- * VirtualBox
- * Vagrant
- * GitBash
+ * [VirtualBox](http://download.virtualbox.org/virtualbox/5.0.0/VirtualBox-5.0.0-101573-Win.exe)
+ * [Vagrant](https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4.msi)
+ * [GitBash](https://github.com/msysgit/msysgit/releases/download/Git-1.9.5-preview20150319/Git-1.9.5-preview20150319.exe)
 
 ### Folder Structure
 

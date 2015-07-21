@@ -34,6 +34,8 @@ npm install -g gulp &> /dev/null || exit 1
 echo ">>>> Installing nsenter Docker Image"
 docker run --rm -v /usr/local/bin:/target jpetazzo/nsenter &> /dev/null || exit 1
 
+/bin/bash /vagrant/scripts/setupDockers.sh
+
 echo ">>>> Cleaning Up"
 apt-get -qq clean &> /dev/null || exit 1
 apt-get -qq autoclean &> /dev/null || exit 1

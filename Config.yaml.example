@@ -1,0 +1,14 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+
+folders:
+    - map: c:\NOUS\Envirnoment
+      to: /projects
+    - map: c:\NOUS\docker
+      to: /docker
+
+ports:
+    - map: 80
+      to: 8080

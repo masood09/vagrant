@@ -7,7 +7,7 @@ echo ">>>> Running docker container : Redis"
 docker run --name redis -v /projects/redis/logs:/var/log/redis:rw -v /projects/redis/conf:/redis/conf:rw -d masood09/redis:3.0.3 /sbin/my_init --enable-insecure-key &> /dev/null || exit 1
 
 echo ">>>> Running docker container : Database (Percona)"
-docker run --name database -e "PERCONA_ADMIN_PASSWORD=secret" -v /projects/percona/conf:/etc/mysql/conf:rw -v /projects/percona/logs:/var/log/mysql:rw -d masood09/percona:5.6.25-73.1-1 /sbin/my_init --enable-insecure-key &> /dev/null || exit 1
+docker run --name database -v /projects/percona/conf:/etc/mysql/conf:rw -v /projects/percona/logs:/var/log/mysql:rw -d masood09/percona:5.6.25-73.1-1 /sbin/my_init --enable-insecure-key &> /dev/null || exit 1
 
 echo ">>>> Running docker container : Webserver (Nginx + PHP-FPM)"
 docker run --name webserver -v /projects/webserver/logs:/var/log/webserver:rw -v /projects/webserver/vhosts:/etc/nginx/sites-enabled:rw -v /projects/webserver/sites:/var/www:rw -v /projects/webserver/conf:/webserver/conf -p 443:443 -p 80:80 --link database:database --link mailcatcher:mailcatcher --link redis:redis -d masood09/nginx-php:1.8.0_5.6.11 /sbin/my_init --enable-insecure-key &> /dev/null || exit 1
